@@ -1,2 +1,4 @@
-# atcoder
-Programs submitting to atcoder.
+Atcoder
+===
+
+This repogitory is code box of atcoder.
