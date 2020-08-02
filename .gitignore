@@ -16,3 +16,6 @@
 #
 *.o
 *.hi
+
+# remove .gitignore
+.DS_Store
