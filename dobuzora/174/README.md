@@ -1,11 +1,9 @@
-AtCoder Beginner Contest 174
+[AtCoder Beginner Contest 174](https://atcoder.jp/contests/abc174)
 ===
 
-[Link](https://atcoder.jp/contests/abc174)
 
-## 結果
 
-![](https://atcoder.jp/users/dobuzora/history/share/abc174)
+## ![成績](https://atcoder.jp/users/dobuzora/history/share/abc174)
 
 ## 所感
 
