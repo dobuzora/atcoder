@@ -19,3 +19,5 @@
 
 # remove .gitignore
 .DS_Store
+
+data
