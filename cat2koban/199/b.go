@@ -163,16 +163,10 @@ var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-	arr := strings.Split(Scan(), " ")
-	v, _ := strconv.Atoi(arr[0])
-	t, _ := strconv.Atoi(arr[1])
-	s, _ := strconv.Atoi(arr[2])
-	d, _ := strconv.Atoi(arr[3])
-	tv := t * v
-	sv := s * v
-	if tv <= d && d <= sv {
-		fmt.Println("No")
-	} else {
-		fmt.Println("Yes")
-	}
+	s1 := [][]int{{1, 1}, {1, 2}, {1, 3}, {1, 4}}
+	s2 := [][]int{{2, 1}, {2, 2}, {2, 3}, {2, 4}}
+
+	s1 = append(s1, s2...)
+
+	fmt.Printf(s1[1][2])
 }
