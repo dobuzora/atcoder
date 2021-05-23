@@ -41,6 +41,14 @@ func iSScan(n int) []int {
 	}
 	return a
 }
+func atoiScan(s string, n int) []int {
+	a := make([]int, n)
+	b := strings.Split(s, " ")
+	for i := 0; i < n; i++ {
+		a[i] = atoi(b[i])
+	}
+	return a
+}
 func Read() string {
 	buf := make([]byte, 0, 1000000)
 	for {
