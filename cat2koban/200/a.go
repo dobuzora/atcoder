@@ -186,5 +186,5 @@ var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-	fmt.Println("")
+	fmt.Println(((iScan() + 99) / 100))
 }
