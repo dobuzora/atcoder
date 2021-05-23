@@ -10,6 +10,7 @@ import (
 )
 
 var sc = bufio.NewScanner(os.Stdin)
+var rd = bufio.NewReader(os.Stdin)
 
 func Scan() string {
 	sc.Scan()
@@ -39,6 +40,20 @@ func iSScan(n int) []int {
 		a[i] = iScan()
 	}
 	return a
+}
+func Read() string {
+	buf := make([]byte, 0, 1000000)
+	for {
+		l, p, e := rd.ReadLine()
+		if e != nil {
+			panic(e)
+		}
+		buf = append(buf, l...)
+		if !p {
+			break
+		}
+	}
+	return string(buf)
 }
 func atoi(s string) int {
 	n, _ := strconv.Atoi(s)
@@ -157,9 +172,19 @@ func factorial(n, m int) ([]int, []int) {
 	return f, inv
 }
 
+func Reverse(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
 var P1 int = 1000000007
 var P2 int = 998244353
 var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
-func main() {}
+func main() {
+	fmt.Println("")
+}
