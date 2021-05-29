@@ -201,8 +201,16 @@ func main() {
 	n2 := make([]int, 3)
 
 	for i := 0; i < len(num1); i++ {
-		num1[i], _ = strconv.Atoi(num1[i])
+		n1[i] = atoi(num1[i])
+		n2[i] = atoi(num2[i])
 	}
 
-	fmt.Println(sum(num1))
+	a := sum(n1)
+	b := sum(n2)
+
+	if a > b {
+		fmt.Println(a)
+	} else {
+		fmt.Println(b)
+	}
 }
