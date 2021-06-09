@@ -41,6 +41,15 @@ func iSScan(n int) []int {
 	}
 	return a
 }
+// slice := aScan(Scan(), 2)
+func aScan(s string, n int) []string {
+  a := make([]string, n)
+  b := strings.Split(s, " ")
+  for i :=0; i < n; i++ {
+    a[i] = b[i]
+  }
+  return a
+}
 func atoiScan(s string, n int) []int {
 	a := make([]int, n)
 	b := strings.Split(s, " ")
@@ -179,13 +188,31 @@ func factorial(n, m int) ([]int, []int) {
 	}
 	return f, inv
 }
-
 func Reverse(s string) string {
 	runes := []rune(s)
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
 		runes[i], runes[j] = runes[j], runes[i]
 	}
 	return string(runes)
+}
+// slice1 := aScan(Scan(), 2)
+// slice2 := []string{"0", "1", "2"}
+// array := unique(slice1, slice2)
+func unique(ss ...[]string) []string {
+    m := map[string]int{}
+    for _, s := range ss {
+      for _, v := range s {
+        m[v]++ // 出現回数をカウント
+      }
+    }
+    res := []string{}
+    for k, v := range m {
+      if v == 1 {
+        // 出現回数が１回のものだけを抽出
+        res = append(res, k)
+      }
+    }
+    return res
 }
 
 var P1 int = 1000000007
@@ -194,5 +221,5 @@ var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-	fmt.Println("")
+  fmt.Println()
 }
