@@ -41,6 +41,14 @@ func iSScan(n int) []int {
 	}
 	return a
 }
+func aScan(s string, n int) []string {
+  a := make([]string, n)
+  b := strings.Split(s, " ")
+  for i :=0; i < n; i++ {
+    a[i] = b[i]
+  }
+  return a
+}
 func atoiScan(s string, n int) []int {
 	a := make([]int, n)
 	b := strings.Split(s, " ")
@@ -188,32 +196,21 @@ func Reverse(s string) string {
 	return string(runes)
 }
 
-func difference(slice1 []string, slice2 []string) []string {
-    var diff []string
-
-    // Loop two times, first to find slice1 strings not in slice2,
-    // second loop to find slice2 strings not in slice1
-    for i := 0; i < 2; i++ {
-        for _, s1 := range slice1 {
-            found := false
-            for _, s2 := range slice2 {
-                if s1 == s2 {
-                    found = true
-                    break
-                }
-            }
-            // String not found. We add it to return slice
-            if !found {
-                diff = append(diff, s1)
-            }
-        }
-        // Swap the slices, only if it was the first loop
-        if i == 0 {
-            slice1, slice2 = slice2, slice1
-        }
+func unique(ss ...[]string) []string {
+    m := map[string]int{}
+    for _, s := range ss {
+      for _, v := range s {
+        m[v]++ // 出現回数をカウント
+      }
     }
-
-    return diff
+    res := []string{}
+    for k, v := range m {
+      if v == 1 {
+        // 出現回数が１回のものだけを抽出
+        res = append(res, k)
+      }
+    }
+    return res
 }
 
 var P1 int = 1000000007
@@ -222,9 +219,13 @@ var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-    slice1 := []string{0, 1, 2}
-    slice2 := atoiScan(Scan(), 2)
+    s1 := aScan(Scan(), 2)
+    s2 := []string{"0", "1", "2"}
+    ans := unique(s1, s2)
 
-    fmt.Printf("%+v\n", difference(slice1, slice2))
+    if len(ans) == 2 {
+      fmt.Println(s1[0])
+    } else {
+      fmt.Println(ans[0])
+    }
 }
-
