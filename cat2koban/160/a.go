@@ -221,11 +221,10 @@ var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-  ary := atoiScan(Scan(), 6)
+  ary := strings.Split(Scan(), "")
   if ary[2] == ary[3] && ary[4] == ary[5] {
   fmt.Println("Yes")
   } else {
     fmt.Println("No")
-
   }
 }
