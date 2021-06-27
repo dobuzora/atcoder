@@ -199,7 +199,7 @@ func main() {
   K := a[1]
   ans := 0
   for i := 1; i<=N; i++ {
-    for j := 1; j<=K; i++ {
+    for j := 1; j<=K; j++ {
       sum := (100 * i) + j
       ans += sum
     }
