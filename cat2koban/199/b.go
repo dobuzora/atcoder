@@ -10,6 +10,7 @@ import (
 )
 
 var sc = bufio.NewScanner(os.Stdin)
+var rd = bufio.NewReader(os.Stdin)
 
 func Scan() string {
 	sc.Scan()
@@ -39,6 +40,37 @@ func iSScan(n int) []int {
 		a[i] = iScan()
 	}
 	return a
+}
+// slice := aScan(Scan(), 2)
+func aScan(s string, n int) []string {
+  a := make([]string, n)
+  b := strings.Split(s, " ")
+  for i :=0; i < n; i++ {
+    a[i] = b[i]
+  }
+  return a
+}
+func atoiScan(s string, n int) []int {
+	a := make([]int, n)
+	b := strings.Split(s, " ")
+	for i := 0; i < n; i++ {
+		a[i] = atoi(b[i])
+	}
+	return a
+}
+func Read() string {
+	buf := make([]byte, 0, 1000000)
+	for {
+		l, p, e := rd.ReadLine()
+		if e != nil {
+			panic(e)
+		}
+		buf = append(buf, l...)
+		if !p {
+			break
+		}
+	}
+	return string(buf)
 }
 func atoi(s string) int {
 	n, _ := strconv.Atoi(s)
@@ -156,6 +188,32 @@ func factorial(n, m int) ([]int, []int) {
 	}
 	return f, inv
 }
+func Reverse(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+// slice1 := aScan(Scan(), 2)
+// slice2 := []string{"0", "1", "2"}
+// array := unique(slice1, slice2)
+func unique(ss ...[]string) []string {
+    m := map[string]int{}
+    for _, s := range ss {
+      for _, v := range s {
+        m[v]++ // 出現回数をカウント
+      }
+    }
+    res := []string{}
+    for k, v := range m {
+      if v == 1 {
+        // 出現回数が１回のものだけを抽出
+        res = append(res, k)
+      }
+    }
+    return res
+}
 
 var P1 int = 1000000007
 var P2 int = 998244353
@@ -163,10 +221,8 @@ var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-	s1 := [][]int{{1, 1}, {1, 2}, {1, 3}, {1, 4}}
-	s2 := [][]int{{2, 1}, {2, 2}, {2, 3}, {2, 4}}
-
-	s1 = append(s1, s2...)
-
-	fmt.Printf(s1[1][2])
+  N := iScan()
+  A := max(atoiScan(Scan(), N)...)
+  B := min(atoiScan(Scan(), N)...)
+  fmt.Println(max(0, B-A+1))
 }
