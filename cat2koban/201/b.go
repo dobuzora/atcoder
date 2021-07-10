@@ -89,7 +89,7 @@ func mod(x, d int) int {
 	}
 	return x
 }
-func max(a ...int) int {
+func max(a []int) int {
 	x := -P3
 	for i := 0; i < len(a); i++ {
 		if x < a[i] {
@@ -214,7 +214,16 @@ func unique(ss ...[]string) []string {
     }
     return res
 }
-
+// スライスの中身削除
+func remove(ints []int, search int) []int {
+  result := []int{}
+  for _, v := range ints {
+    if v != search {
+      result = append(result, v)
+    }
+  }
+  return result
+}
 
 var P1 int = 1000000007
 var P2 int = 998244353
@@ -224,16 +233,25 @@ var BINF int = 1 << 60
 func main() {
   N := iScan()
   mountainHeights := make([]int, N)
+  mountainNames := make([]string, N)
+  var m map[string]int
+  m = make(map[string]int)
 
   for i:=0; i<N; i++ {
     ary := strings.Split(Scan(), " ")
-    var m map[string]int
 
-    m = make(map[string]int)
 	  m[ary[0]] = atoi(ary[1])
 
     mountainHeights[i] = atoi(ary[1])
+    mountainNames[i] = ary[0]
   }
   mostHighestMountain := max(mountainHeights)
+  neoMountainHeights := remove(mountainHeights, mostHighestMountain)
+  secondHighestMountain := max(neoMountainHeights)
 
+  for i:=0; i<N; i++ {
+    if m[mountainNames[i]] == secondHighestMountain {
+      fmt.Println(mountainNames[i])
+    }
+  }
 }
