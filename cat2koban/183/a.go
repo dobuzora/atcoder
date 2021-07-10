@@ -215,25 +215,16 @@ func unique(ss ...[]string) []string {
     return res
 }
 
-
 var P1 int = 1000000007
 var P2 int = 998244353
 var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-  N := iScan()
-  mountainHeights := make([]int, N)
-
-  for i:=0; i<N; i++ {
-    ary := strings.Split(Scan(), " ")
-    var m map[string]int
-
-    m = make(map[string]int)
-	  m[ary[0]] = atoi(ary[1])
-
-    mountainHeights[i] = atoi(ary[1])
+  x := iScan()
+  if x >= 0 {
+    fmt.Println(x)
+  } else if x < 0 {
+    fmt.Println(0)
   }
-  mostHighestMountain := max(mountainHeights)
-
 }
