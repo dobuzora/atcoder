@@ -214,6 +214,27 @@ func unique(ss ...[]string) []string {
     }
     return res
 }
+// スライスの中身削除
+func removeInts(ints []int, search int) []int {
+  result := []int{}
+  for _, v := range ints {
+    if v != search {
+      result = append(result, v)
+    }
+  }
+  return result
+}
+
+// スライスの中身削除
+func removeStrings(strings []string, search string) []string {
+  result := []string{}
+  for _, v := range strings {
+    if v != search {
+      result = append(result, v)
+    }
+  }
+  return result
+}
 
 var P1 int = 1000000007
 var P2 int = 998244353
