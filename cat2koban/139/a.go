@@ -7,7 +7,6 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-  "math"
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -243,18 +242,13 @@ var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
 
 func main() {
-  ary := strings.Split(Read(), " ")
-  a := atoi(ary[0])
-  b := atoi(ary[1])
-  k := (a+b)/2
-  if a == 0 || b == 0 {
-    fmt.Println("IMPOSSIBLE")
-    return
-  }
+  ex := Scan()
+  ac := Scan()
+  ans := 0
 
-  if math.Abs(float64(a-k)) == math.Abs(float64(b-k)) {
-    fmt.Println(k)
-  } else {
-    fmt.Println("IMPOSSIBLE")
-  }
+  if ex[0] == ac[0] { ans++ }
+  if ex[1] == ac[1] { ans++ }
+  if ex[2] == ac[2] { ans++ }
+
+  fmt.Println(ans)
 }
