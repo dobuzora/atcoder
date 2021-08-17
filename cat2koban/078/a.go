@@ -12,10 +12,6 @@ import (
 var sc = bufio.NewScanner(os.Stdin)
 var rd = bufio.NewReader(os.Stdin)
 
-func main() {
-  fmt.Println()
-}
-
 func Scan() string {
 	sc.Scan()
 	return sc.Text()
@@ -244,3 +240,17 @@ var P1 int = 1000000007
 var P2 int = 998244353
 var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
+
+func main(){
+  ary := aScan(Scan(),2)
+  X := ary[0]
+  Y := ary[1]
+
+	if X>Y {
+		fmt.Println(">")
+	} else if Y>X {
+		fmt.Println("<")
+	} else {
+		fmt.Println("=")
+	}
+}

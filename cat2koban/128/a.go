@@ -13,7 +13,11 @@ var sc = bufio.NewScanner(os.Stdin)
 var rd = bufio.NewReader(os.Stdin)
 
 func main() {
-  fmt.Println()
+  ary := atoiScan(Scan(), 2)
+  A := ary[0]
+  P := ary[1]
+  P += 3*A
+  fmt.Println(P/2)
 }
 
 func Scan() string {
