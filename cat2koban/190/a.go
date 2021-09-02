@@ -12,6 +12,17 @@ import (
 var sc = bufio.NewScanner(os.Stdin)
 var rd = bufio.NewReader(os.Stdin)
 
+func main() {
+  var a, b, c int
+  fmt.Scan(&a, &b, &c)
+
+  if c == 0 {
+    bPrint((b>a-1), "Aoki", "Takahashi")
+  } else {
+    bPrint((a>b-1), "Takahashi", "Aoki")
+  }
+}
+
 func Scan() string {
 	sc.Scan()
 	return sc.Text()
@@ -219,16 +230,3 @@ var P1 int = 1000000007
 var P2 int = 998244353
 var P3 int = 1<<61 - 1
 var BINF int = 1 << 60
-
-func main() {
-  slice := atoiScan(Scan(), 3)
-  a := slice[0]
-  b := slice[1]
-  c := slice[2]
-
-  if c == 0 {
-    bPrint((b>a-1), "Aoki", "Takahashi")
-  } else {
-    bPrint((a>b-1), "Takahashi", "Aoki")
-  }
-}
