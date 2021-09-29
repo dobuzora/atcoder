@@ -13,9 +13,8 @@ var sc = bufio.NewScanner(os.Stdin)
 var rd = bufio.NewReader(os.Stdin)
 
 func main() {
-  var a, b, c int
-  fmt.Scan(&a, &b, &c)
-  bPrint(a+b+c>=22, "bust", "win")
+  s := Scan()
+  bPrint(s == "Hello,World!", "AC", "WA")
 }
 
 func Scan() string {
