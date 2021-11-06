@@ -3,8 +3,9 @@ package main
 import (
   "fmt"
   "log"
-  "github.com/mattn/go-pipeline"
   "os"
+
+  "github.com/mattn/go-pipeline"
 )
 
 func main() {
