@@ -14,8 +14,7 @@ var sc = bufio.NewScanner(os.Stdin)
 var rd = bufio.NewReader(os.Stdin)
 
 func main() {
-  i := Scan()
-  f, _ := strconv.ParseFloat(i, 64)
+  f, _ := strconv.ParseFloat(Scan(), 64)
   fmt.Println(math.Round(f))
 }
 
