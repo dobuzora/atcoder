@@ -16,11 +16,24 @@ func main() {
   ary := atoiScan(Scan(), 3)
   a := ary[0]
   b := ary[1]
-  c := ary[2] * 2
-  if b >= c && c >= a {
-    fmt.Println(c)
-  } else {
-    fmt.Println(-1)
+  c := ary[2]
+  if a%c == 0 {
+    fmt.Println("-1")
+    return
+  }
+
+  for i:=2; i<999999; i++ {
+    n := c * i
+
+    if (b >= n && n >= a) {
+      fmt.Println(n)
+      break
+    }
+
+    if n > b {
+      fmt.Println("-1")
+      break
+    }
   }
 }
 
