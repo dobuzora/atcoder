@@ -17,7 +17,11 @@ func main() {
   a := ary[0]
   b := ary[1]
   c := ary[2] * 2
-  bPrint(b > c && c > a, strconv.Itoa(c), "-1")
+  if b >= c && c >= a {
+    fmt.Println(c)
+  } else {
+    fmt.Println(-1)
+  }
 }
 
 func Scan() string {
