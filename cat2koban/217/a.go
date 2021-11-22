@@ -14,9 +14,7 @@ var rd = bufio.NewReader(os.Stdin)
 
 func main() {
   ary := SScan(2)
-  i := strings.Compare(ary[0], ary[1])
-
-  bPrint(i > 0, "Yes", "No")
+  bPrint(ary[0] > ary[1], "Yes", "No")
 }
 
 func Scan() string {
