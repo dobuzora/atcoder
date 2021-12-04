@@ -18,7 +18,7 @@ func main() {
     i = i + 1
   }
 
-  fmt.Println(fmt.Sprintf("%03d", i))
+  fmt.Println("AGC" + fmt.Sprintf("%03d", i))
 }
 
 func Scan() string {
